@@ -7,18 +7,27 @@ const messages = [
   "Invest your new income 🤑",
 ];
 
-function App() {
+export default function App() {
+  return (
+    <div>
+      <Steps />
+      <Steps />
+    </div>
+  );
+}
+
+function Steps() {
   const [step, setStep] = useState(1);
   const [isOpen, setIsOpen] = useState(true);
   // const [test, setTest] = useState({ name: "Maks" });
 
   function handlePrevious() {
-    if (step > 1) setStep(step - 1);
+    if (step > 1) setStep((s) => s - 1);
     // if (step === 2) setTest({ name: "Maks" });
   }
 
   function handleNext() {
-    if (step < 3) setStep(step + 1);
+    if (step < 3) setStep((s) => s + 1);
     // setTest({ name: "Friends" });
   }
 
@@ -28,7 +37,7 @@ function App() {
 
   return (
     <div>
-      <button className="close" onClick={() => setIsOpen(!isOpen)}>
+      <button className="close" onClick={() => setIsOpen((is) => !is)}>
         &times;
       </button>
       {isOpen && (
@@ -62,5 +71,5 @@ function App() {
   );
 }
 
-export default App;
-// 6/63
+// export default App;
+// 6/68
