@@ -2,9 +2,10 @@ import React from "react";
 
 const StepMessage = ({ step, children }) => {
   return (
-    <p className="message">
-      {step}:{children}
-    </p>
+    <div className="message">
+      <h3>Step {step}:</h3>
+      {children}
+    </div>
   );
 };
 
